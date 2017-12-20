@@ -78,7 +78,7 @@ public class PostContentParameterResolver {
   private Map<String, String> resolveJsonPath(String incomingPostContent, GenericVariable gv) {
     final Object resolved = JsonPath.read(incomingPostContent, gv.getExpression());
     Map<String, String> resolvedVariables = newHashMap();
-    resolvedVariables.put(gv.getVariableName(), resolved.toString());
+    resolvedVariables.put(gv.getVariableName(), incomingPostContent);
     return resolvedVariables;
   }
 
